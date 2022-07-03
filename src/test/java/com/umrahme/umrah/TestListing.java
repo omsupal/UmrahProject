@@ -119,8 +119,9 @@ public class TestListing {
 	}
 
 	@AfterSuite
-	public void afterSuite() {
-		driver.quit();
+	public void afterSuite() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.close();
 	}
 
 }
