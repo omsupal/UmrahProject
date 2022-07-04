@@ -1,0 +1,1 @@
+git remote add origin https://traveazysource@dev.azure.com/traveazysource/UmeAutomation/_git/Automation_Freshers
