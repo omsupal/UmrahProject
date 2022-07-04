@@ -118,10 +118,5 @@ public class TestListing {
 		listing = new ListingPage(driver);
 	}
 
-	@AfterSuite
-	public void afterSuite() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.close();
-	}
 
 }
