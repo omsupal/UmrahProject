@@ -2,71 +2,67 @@
 <testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-03T19:45:08 IST" name="Default suite" finished-at="2022-07-03T19:45:31 IST" duration-ms="23480">
+  <suite started-at="2022-07-04T09:25:40 IST" name="Default suite" finished-at="2022-07-04T09:25:49 IST" duration-ms="8904">
     <groups>
     </groups>
-    <test started-at="2022-07-03T19:45:08 IST" name="Default test" finished-at="2022-07-03T19:45:31 IST" duration-ms="23480">
+    <test started-at="2022-07-04T09:25:40 IST" name="Default test" finished-at="2022-07-04T09:25:49 IST" duration-ms="8904">
       <class name="com.umrahme.umrah.TestListing">
-        <test-method is-config="true" signature="driverInitialize()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:44:42 IST" name="driverInitialize" finished-at="2022-07-03T19:45:08 IST" duration-ms="25366" status="PASS">
+        <test-method is-config="true" signature="driverInitialize()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:27 IST" name="driverInitialize" finished-at="2022-07-04T09:25:40 IST" duration-ms="13436" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverInitialize -->
-        <test-method signature="SelectDate()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:09 IST" name="SelectDate" finished-at="2022-07-03T19:45:10 IST" duration-ms="846" status="PASS">
+        <test-method signature="SelectDate()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:40 IST" name="SelectDate" finished-at="2022-07-04T09:25:41 IST" duration-ms="932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectDate -->
-        <test-method signature="SelectDestination()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:10 IST" name="SelectDestination" finished-at="2022-07-03T19:45:10 IST" duration-ms="390" status="PASS">
+        <test-method signature="SelectDestination()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:41 IST" name="SelectDestination" finished-at="2022-07-04T09:25:42 IST" duration-ms="535" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectDestination -->
-        <test-method signature="SelectDestinationerrorfetch()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:10 IST" name="SelectDestinationerrorfetch" finished-at="2022-07-03T19:45:10 IST" duration-ms="51" status="PASS">
+        <test-method signature="SelectDestinationerrorfetch()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:42 IST" name="SelectDestinationerrorfetch" finished-at="2022-07-04T09:25:42 IST" duration-ms="61" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectDestinationerrorfetch -->
-        <test-method signature="SelectNationalityerrorfetch()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:10 IST" name="SelectNationalityerrorfetch" finished-at="2022-07-03T19:45:10 IST" duration-ms="36" status="PASS">
+        <test-method signature="SelectNationalityerrorfetch()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:42 IST" name="SelectNationalityerrorfetch" finished-at="2022-07-04T09:25:42 IST" duration-ms="65" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectNationalityerrorfetch -->
-        <test-method signature="SelectmeccaStay()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:10 IST" name="SelectmeccaStay" finished-at="2022-07-03T19:45:10 IST" duration-ms="207" status="PASS">
+        <test-method signature="SelectmeccaStay()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:42 IST" name="SelectmeccaStay" finished-at="2022-07-04T09:25:42 IST" duration-ms="462" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectmeccaStay -->
-        <test-method signature="clickOnTravellers()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:10 IST" name="clickOnTravellers" finished-at="2022-07-03T19:45:13 IST" duration-ms="2437" status="PASS">
+        <test-method signature="clickOnTravellers()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:42 IST" name="clickOnTravellers" finished-at="2022-07-04T09:25:44 IST" duration-ms="1513" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnTravellers -->
-        <test-method signature="meccaerror()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:13 IST" name="meccaerror" finished-at="2022-07-03T19:45:13 IST" duration-ms="54" status="PASS">
+        <test-method signature="meccaerror()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:44 IST" name="meccaerror" finished-at="2022-07-04T09:25:44 IST" duration-ms="44" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- meccaerror -->
-        <test-method signature="selectAdult()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:13 IST" name="selectAdult" finished-at="2022-07-03T19:45:13 IST" duration-ms="497" status="PASS">
+        <test-method signature="selectAdult()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:44 IST" name="selectAdult" finished-at="2022-07-04T09:25:45 IST" duration-ms="629" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectAdult -->
-        <test-method signature="selectChild()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:13 IST" name="selectChild" finished-at="2022-07-03T19:45:14 IST" duration-ms="288" status="PASS">
+        <test-method signature="selectChild()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:45 IST" name="selectChild" finished-at="2022-07-04T09:25:45 IST" duration-ms="348" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectChild -->
-        <test-method signature="selectCountryOfResidence()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:14 IST" name="selectCountryOfResidence" finished-at="2022-07-03T19:45:14 IST" duration-ms="454" status="PASS">
+        <test-method signature="selectCountryOfResidence()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:45 IST" name="selectCountryOfResidence" finished-at="2022-07-04T09:25:45 IST" duration-ms="411" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectCountryOfResidence -->
-        <test-method signature="selectNationality()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:14 IST" name="selectNationality" finished-at="2022-07-03T19:45:15 IST" duration-ms="440" status="PASS">
+        <test-method signature="selectNationality()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:45 IST" name="selectNationality" finished-at="2022-07-04T09:25:46 IST" duration-ms="463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectNationality -->
-        <test-method signature="selectage()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:15 IST" name="selectage" finished-at="2022-07-03T19:45:15 IST" duration-ms="237" status="PASS">
+        <test-method signature="selectage()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:46 IST" name="selectage" finished-at="2022-07-04T09:25:46 IST" duration-ms="284" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectage -->
-        <test-method is-config="true" signature="clickOnSearch()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:15 IST" name="clickOnSearch" finished-at="2022-07-03T19:45:31 IST" duration-ms="16398" status="PASS">
+        <test-method is-config="true" signature="clickOnSearch()[pri:0, instance:com.umrahme.umrah.TestListing@82de64a]" started-at="2022-07-04T09:25:46 IST" name="clickOnSearch" finished-at="2022-07-04T09:25:49 IST" duration-ms="3058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickOnSearch -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.umrahme.umrah.TestListing@51e69659]" started-at="2022-07-03T19:45:32 IST" name="afterSuite" finished-at="2022-07-03T19:45:46 IST" duration-ms="13536" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
       </class> <!-- com.umrahme.umrah.TestListing -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
