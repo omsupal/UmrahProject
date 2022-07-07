@@ -21,6 +21,7 @@ public class Demo {
 		list.StartDate();
 //		list.Staymadinah();
 		list.Staymecca();
+		list.traveller_and_rooms();
 
 	}
 

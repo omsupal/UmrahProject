@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchPage {
@@ -57,7 +58,17 @@ public class SearchPage {
 	
 	@FindBy(id="select2-madinaCityNight-container")
 	private WebElement selected_no_of_nightsMadina;
+	
+	@FindBy(xpath="//label[contains(.,'Travellers & Rooms')]/..")
+	private WebElement travellers_rooms;
+	
+	@FindBy(xpath=".//label[contains(.,'Adults')]/preceding-sibling::select")
+	private WebElement adult_select;
+	
+	@FindBy(xpath=".//label[contains(.,'Children')]/preceding-sibling::select")
+	private WebElement child_select;
 
+//*****************Explicit Wait Method**********************************************
 	public void elementCall(final WebElement ele) {
 		wait.until(new ExpectedCondition<Boolean>() {
 
@@ -142,6 +153,19 @@ public class SearchPage {
 		madina_search.sendKeys(str, Keys.ENTER);
 		assertEquals(selected_no_of_nightsMadina.getText(), str+" Nights");
 		System.out.println(selected_no_of_nightsMadina.getText());
+		
+	}
+	
+//****************************Travellers and Rooms*************************************************
+	public void traveller_and_rooms() {
+		elementCall(travellers_rooms);
+		travellers_rooms.click();
+		Select adult = new Select(adult_select);
+		adult_select.click();
+		adult.selectByVisibleText("4");
+		Select child = new Select(child_select);
+		child.selectByVisibleText("2");
+		
 		
 	}
 //*********************************************************************************************
