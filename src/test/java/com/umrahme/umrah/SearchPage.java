@@ -6,6 +6,8 @@ import static org.testng.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SearchPage {
 	public WebDriver driver;
 	public WebDriverWait wait;
-
+	public Select occupancy;
 //**************************WebElements***********************************************************
 	@FindBy(id = "RouteCode-error")
 	private WebElement sel_dest_error;
@@ -160,13 +162,15 @@ public class SearchPage {
 	public void traveller_and_rooms() {
 		elementCall(travellers_rooms);
 		travellers_rooms.click();
-		Select adult = new Select(adult_select);
+		elementCall(adult_select);
+		occupancy = new Select(adult_select);
 		adult_select.click();
-		adult.selectByVisibleText("4");
-		Select child = new Select(child_select);
-		child.selectByVisibleText("2");
-		
-		
+		occupancy.selectByVisibleText("4");
+		assertEquals(occupancy.getFirstSelectedOption().getText(), "4");
+		elementCall(child_select);
+		occupancy = new Select(child_select);
+		occupancy.selectByVisibleText("2");
+		assertEquals(occupancy.getFirstSelectedOption().getText(), "2");
 	}
 //*********************************************************************************************
 	public SearchPage(WebDriver driver) {
