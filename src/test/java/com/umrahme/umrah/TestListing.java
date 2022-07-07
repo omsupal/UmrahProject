@@ -117,6 +117,11 @@ public class TestListing {
 		driver.get("https://www.umrahme.com/home/en-sa");
 		listing = new ListingPage(driver);
 	}
+	@AfterSuite
+	public void driverclose() throws Exception {
+
+		driver.quit();
+	}
 
 
 }
