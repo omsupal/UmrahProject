@@ -3,10 +3,10 @@ package com.umrahme.umrah;
 import java.util.Date;
 import static org.testng.Assert.assertEquals;
 
-
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,9 +34,9 @@ public class SearchPage {
 	private WebElement select_destination;
 
 	@FindBy(xpath = "//input[@class='select2-search__field']")
-	private WebElement selctdest_search;
-	
-	@FindBy(id="select2-RouteCode-results")
+	private WebElement search_box;
+
+	@FindBy(id = "select2-RouteCode-results")
 	private WebElement destination_result;
 
 	@FindBy(id = "StartDate")
@@ -50,39 +50,45 @@ public class SearchPage {
 
 	@FindBy(xpath = ".//ul[@id='select2-meccaCityNight-results']")
 	private WebElement mecca_dropdown;
-	
-	@FindBy(id="select2-meccaCityNight-container")
+
+	@FindBy(id = "select2-meccaCityNight-container")
 	private WebElement selected_no_of_night;
-	
-	@FindBy(xpath="//span[@aria-labelledby='select2-madinaCityNight-container']")
+
+	@FindBy(xpath = "//span[@aria-labelledby='select2-madinaCityNight-container']")
 	WebElement madina_stay;
-	
-	@FindBy(xpath=".//input[@aria-controls='select2-madinaCityNight-results']")
+
+	@FindBy(xpath = ".//input[@aria-controls='select2-madinaCityNight-results']")
 	private WebElement madina_search;
-	
-	@FindBy(id="select2-madinaCityNight-container")
+
+	@FindBy(id = "select2-madinaCityNight-container")
 	private WebElement selected_no_of_nightsMadina;
-	
-	@FindBy(xpath="//label[contains(.,'Travellers & Rooms')]/..")
+
+	@FindBy(xpath = "//label[contains(.,'Travellers & Rooms')]/..")
 	private WebElement travellers_rooms;
-	
-	@FindBy(xpath=".//label[contains(.,'Adults')]/preceding-sibling::select")
+
+	@FindBy(xpath = ".//label[contains(.,'Adults')]/preceding-sibling::select")
 	private WebElement adult_select;
-	
-	@FindBy(xpath=".//label[contains(.,'Children')]/preceding-sibling::select")
+
+	@FindBy(xpath = ".//label[contains(.,'Children')]/preceding-sibling::select")
 	private WebElement child_select;
-	
-	@FindBy(xpath="//label[contains(.,'Country Of Residence')]/preceding-sibling::span") 
+
+	@FindBy(xpath = "//label[contains(.,'Country Of Residence')]/preceding-sibling::span")
 	private WebElement countryofresidence;
-	
-	@FindBy(xpath="//input[@class='select2-search__field']")
+
+	@FindBy(xpath = "//input[@class='select2-search__field']")
 	private WebElement searchCon;
-	
-	@FindBy(id="select2-CountryOfResidence-results")
+
+	@FindBy(id = "select2-CountryOfResidence-results")
 	private WebElement Country_result;
-	
-	@FindBy(id="select2-Nationality-container") 
+
+	@FindBy(id = "select2-Nationality-container")
 	private WebElement nationality;
+
+	@FindBy(xpath = "//input[@aria-controls='select2-Nationality-results']")
+	private WebElement search_nationality;
+
+	@FindBy(id = "select2-Nationality-results")
+	private WebElement nationality_result;
 
 //*****************Explicit Wait Method**********************************************
 	public void elementCall(final WebElement ele) {
@@ -99,7 +105,7 @@ public class SearchPage {
 
 // ********-- Click on Select Destination Element and search for destination--***********
 	public void ClickOnSelectDestination(String dest) {
-		
+
 		if (wait.until(new ExpectedCondition<Boolean>() {
 
 			@Override
@@ -117,11 +123,11 @@ public class SearchPage {
 		select_destination.click();
 		elementCall(dropdown_dest);
 		System.out.println("Select Destination Dropdown is visible");
-		elementCall(selctdest_search);
-		selctdest_search.sendKeys(dest);
+		elementCall(search_box);
+		search_box.sendKeys(dest);
 		elementCall(destination_result);
 		assertEquals(destination_result.getText(), dest);
-		selctdest_search.sendKeys(Keys.ENTER);
+		search_box.sendKeys(Keys.ENTER);
 	}
 
 //*************************************************************************************************
@@ -156,11 +162,11 @@ public class SearchPage {
 		String str = "5";
 		elementCall(makkah_stay);
 		makkah_stay.click();
-		elementCall(mecca_search);
-		mecca_search.sendKeys(str, Keys.ENTER);
-		assertEquals(selected_no_of_night.getText(), str+" Nights");
+		elementCall(search_box);
+		search_box.sendKeys(str, Keys.ENTER);
+		assertEquals(selected_no_of_night.getText(), str + " Nights");
 		System.out.println(selected_no_of_night.getText());
-		
+
 	}
 
 //********************************Maddina Stay**************************************************
@@ -168,14 +174,20 @@ public class SearchPage {
 		String str = "5";
 		elementCall(madina_stay);
 		madina_stay.click();
-		elementCall(madina_search);
-		madina_search.sendKeys(str, Keys.ENTER);
-		assertEquals(selected_no_of_nightsMadina.getText(), str+" Nights");
+		elementCall(search_box);
+		search_box.sendKeys(str, Keys.ENTER);
+		assertEquals(selected_no_of_nightsMadina.getText(), str + " Nights");
 		System.out.println(selected_no_of_nightsMadina.getText());
-		
+
 	}
-	
+
 //****************************Travellers and Rooms*************************************************
+	public WebElement getAge(int i) {
+		String str = "//ul[@class='age-wrap']/li[" + i + "]/select";
+		WebElement child_age_select = driver.findElement(By.xpath(str));
+		return child_age_select;
+	}
+
 	public void traveller_and_rooms() {
 		elementCall(travellers_rooms);
 		travellers_rooms.click();
@@ -188,23 +200,40 @@ public class SearchPage {
 		occupancy = new Select(child_select);
 		occupancy.selectByVisibleText("2");
 		assertEquals(occupancy.getFirstSelectedOption().getText(), "2");
+		int i = 2;
+		for (int j = 1; j <= i; j++) {
+			System.out.println("in loop");
+			String str = "//ul[@class='age-wrap']/li[" + j + "]/select";
+			WebElement age = driver.findElement(By.xpath(str));
+			age.click();
+			occupancy = new Select(age);
+			occupancy.selectByIndex(i);
+		}
 	}
+
 //********************************Select Country Of Residence*****************************************
 	public void selectcountryOfResidence(String country) {
 		elementCall(countryofresidence);
 		countryofresidence.click();
-		elementCall(searchCon);
-		searchCon.sendKeys(country);
+		elementCall(search_box);
+		search_box.sendKeys(country);
 		elementCall(Country_result);
 		System.out.println(Country_result.getText());
 		assertEquals(Country_result.getText(), country);
 		searchCon.sendKeys(Keys.ENTER);
 	}
+
 //*********************************************************************************************	
 	public void selectNationality(String nation) {
 		elementCall(nationality);
-		
+		nationality.click();
+		elementCall(search_box);
+		search_box.sendKeys(nation);
+		assertEquals(nationality_result.getText(), nation);
+		search_box.sendKeys(Keys.ENTER);
+
 	}
+
 //*********************************************************************************************
 	public SearchPage(WebDriver driver) {
 		this.driver = driver;

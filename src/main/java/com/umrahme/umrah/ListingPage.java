@@ -49,8 +49,7 @@ public class ListingPage {
 
 		
 		public WebElement getAge(int i) {
-			String str = "//ul[@class=\"age-wrap\"]/li["+i+"]/select";
-			child_age_select = driver.findElement(By.xpath(str));
+		
 			return child_age_select;
 		}
 //		

@@ -23,6 +23,7 @@ public class Demo {
 		list.Staymecca();
 		list.traveller_and_rooms();
 		list.selectcountryOfResidence("United States of America");
+		list.selectNationality("United States of America");
 
 	}
 
