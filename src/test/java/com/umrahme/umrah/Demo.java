@@ -17,11 +17,12 @@ public class Demo {
 		driver.get("https://www.umrahme.com/home/en-sa");
 		driver.navigate().refresh();
 		SearchPage list = new SearchPage(driver);
-		list.ClickOnSelectDestination("makkah");
+		list.ClickOnSelectDestination("Makkah Only Package");
 		list.StartDate();
 //		list.Staymadinah();
 		list.Staymecca();
 		list.traveller_and_rooms();
+		list.selectcountryOfResidence("United States of America");
 
 	}
 

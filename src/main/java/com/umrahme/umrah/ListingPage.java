@@ -54,13 +54,13 @@ public class ListingPage {
 			return child_age_select;
 		}
 //		
-		@FindBy(xpath="//span[@aria-labelledby='select2-CountryOfResidence-container']/parent::span/parent::span") 
+		@FindBy(xpath="//label[contains(.,'Country Of Residence')]/preceding-sibling::span") 
 		private WebElement countryofresidence;
 		
 		@FindBy(xpath="//input[@aria-controls='select2-CountryOfResidence-results']")
 		private WebElement searchCon;
 //
-		@FindBy(xpath="//span[@aria-labelledby='select2-Nationality-container']/parent::span/parent::span") 
+		@FindBy(id="select2-Nationality-container") 
 		private WebElement nationality;
 		
 		@FindBy(xpath="//input[@aria-controls='select2-Nationality-results']")

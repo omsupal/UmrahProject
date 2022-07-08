@@ -2,12 +2,11 @@ package com.umrahme.umrah;
 
 import java.util.Date;
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,11 +30,14 @@ public class SearchPage {
 	@FindBy(xpath = ".//select[@title='Select Destination']")
 	private WebElement Select_destination_selectTag;
 
-	@FindBy(xpath = "//*[@id=\"frmHomeSearch\"]/div/div/div[1]/span")
+	@FindBy(xpath = "//span[@title='Select Destination']")
 	private WebElement select_destination;
 
 	@FindBy(xpath = "//input[@class='select2-search__field']")
 	private WebElement selctdest_search;
+	
+	@FindBy(id="select2-RouteCode-results")
+	private WebElement destination_result;
 
 	@FindBy(id = "StartDate")
 	private WebElement startdate;
@@ -69,6 +71,18 @@ public class SearchPage {
 	
 	@FindBy(xpath=".//label[contains(.,'Children')]/preceding-sibling::select")
 	private WebElement child_select;
+	
+	@FindBy(xpath="//label[contains(.,'Country Of Residence')]/preceding-sibling::span") 
+	private WebElement countryofresidence;
+	
+	@FindBy(xpath="//input[@class='select2-search__field']")
+	private WebElement searchCon;
+	
+	@FindBy(id="select2-CountryOfResidence-results")
+	private WebElement Country_result;
+	
+	@FindBy(id="select2-Nationality-container") 
+	private WebElement nationality;
 
 //*****************Explicit Wait Method**********************************************
 	public void elementCall(final WebElement ele) {
@@ -104,7 +118,10 @@ public class SearchPage {
 		elementCall(dropdown_dest);
 		System.out.println("Select Destination Dropdown is visible");
 		elementCall(selctdest_search);
-		selctdest_search.sendKeys(dest, Keys.ENTER);
+		selctdest_search.sendKeys(dest);
+		elementCall(destination_result);
+		assertEquals(destination_result.getText(), dest);
+		selctdest_search.sendKeys(Keys.ENTER);
 	}
 
 //*************************************************************************************************
@@ -171,6 +188,22 @@ public class SearchPage {
 		occupancy = new Select(child_select);
 		occupancy.selectByVisibleText("2");
 		assertEquals(occupancy.getFirstSelectedOption().getText(), "2");
+	}
+//********************************Select Country Of Residence*****************************************
+	public void selectcountryOfResidence(String country) {
+		elementCall(countryofresidence);
+		countryofresidence.click();
+		elementCall(searchCon);
+		searchCon.sendKeys(country);
+		elementCall(Country_result);
+		System.out.println(Country_result.getText());
+		assertEquals(Country_result.getText(), country);
+		searchCon.sendKeys(Keys.ENTER);
+	}
+//*********************************************************************************************	
+	public void selectNationality(String nation) {
+		elementCall(nationality);
+		
 	}
 //*********************************************************************************************
 	public SearchPage(WebDriver driver) {
